@@ -1,0 +1,4 @@
+**/.vscode/
+**/build/
+test-with-gmp  
+test-without-gmp
