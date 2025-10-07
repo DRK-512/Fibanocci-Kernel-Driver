@@ -5,6 +5,9 @@
 - The Fibonacci sequence is a sequence in which each number is the sum of the two preceding ones.
 - The first 15 are: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377
 
+## Dependancies
+sudo apt install libgmp3-dev
+
 ## What do we have? 
 - In the src dir we have four .c files.
 1. fibonacci.c is the kernel module made for this and uses the test-without-gmp.c approach since gmp is not part of the kernel 
@@ -37,11 +40,14 @@ Fibonacci Number of 130 is: 659034621587630041982498215
 - I have created a few make functions that can help you achieve this.
 ### 1. Compile The Module
 ```bash
+mkdir build
+cd build
+cmake ../
 make
 ```
 ### 2. Insert The Kernel Module
 ```bash
-make install
+sudo make install
 ```
 ### 3. Load the Kernel Module
 - Before you can run another command, you must run dmesg to find a line of code that looks like this: 
